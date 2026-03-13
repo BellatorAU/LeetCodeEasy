@@ -12,38 +12,23 @@ public class LongestCommonPrefix implements Task {
     @Override
     public void solve() {
         String[] input = {"flower","flow","flight"};
-        String result = longestCommonPrefix(input);
+        String result = longestCommonPrefixVerticalScanning(input);
         System.out.println(result);
     }
 
-    private static String longestCommonPrefix(String[] strs) {
-        char[][] chars = new char[strs.length][];
-        int min = strs[0].length();
-        for (int i = 0; i < strs.length; i++) {
-            chars[i] = strs[i].toCharArray();
-            if (min > strs[i].length()) {
-                min = strs[i].length();
-            }
-        }
+    private static String longestCommonPrefixVerticalScanning(String[] strs) {
+        StringBuilder answer = new StringBuilder();
 
-        boolean flag;
-        String answer = "";
-
-        for (int i = 0; i < min; i++) {
-            flag = true;
+        for (int i = 0; i < strs[0].length(); i++) {
+            char current = strs[0].charAt(i);
             for (int j = 1 ; j < strs.length; j++) {
-                if (chars[0][i] != chars[j][i]) {
-                    flag = false;
-                    break;
+                if (i == strs[j].length() || current != strs[j].charAt(i)) {
+                    return answer.toString();
                 }
             }
-            if (flag) {
-                answer += chars[0][i];
-            } else {
-                break;
-            }
+            answer.append(current);
         }
 
-        return answer;
+        return answer.toString();
     }
 }
