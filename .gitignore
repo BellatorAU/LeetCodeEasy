@@ -1,0 +1,17 @@
+# intellij files
+.idea/
+*.iml
+*.ipr
+*.iws
+build-idea/
+
+# testing stuff
+**/.local*
+/logs/
+**/target/
+
+out/
+!**/src/main/**/out/
+!**/src/test/**/out/
+
+target/
