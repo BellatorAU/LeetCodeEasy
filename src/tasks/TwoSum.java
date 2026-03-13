@@ -6,6 +6,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 
 public class TwoSum implements Task {
+    private static final int TASK_ID = 1;
 
     @Override
     public void solve() {
