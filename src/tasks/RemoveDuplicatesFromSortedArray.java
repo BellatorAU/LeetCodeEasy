@@ -1,18 +1,19 @@
 package tasks;
 
+import core.FastScanner;
 import core.Task;
 
 public class RemoveDuplicatesFromSortedArray implements Task {
     private static final int TASK_ID = 26;
 
     @Override
-    public void solve() {
+    public void solve(FastScanner in) {
         int[] nums = {1,1,2};
         int result = removeDuplicates(nums);
         System.out.println(result);
     }
 
-    private static int removeDuplicates(int[] nums) {
+    private int removeDuplicates(int[] nums) {
         if(nums.length == 0) return 0;
 
         int counter = 0;

@@ -1,5 +1,6 @@
 package tasks;
 
+import core.FastScanner;
 import core.Task;
 
 import java.util.Arrays;
@@ -9,14 +10,14 @@ public class TwoSum implements Task {
     private static final int TASK_ID = 1;
 
     @Override
-    public void solve() {
+    public void solve(FastScanner in) {
         int[] input = {3,3};
         int target = 6;
         int [] result = twoSumHashMapOneLoop(input, target);
         System.out.println(Arrays.toString(result));
     }
 
-    public static int[] twoSumHashMapOneLoop(int[] nums, int target) {
+    private int[] twoSumHashMapOneLoop(int[] nums, int target) {
         HashMap<Integer, Integer> map = new HashMap<>();
         int diff = 0;
         for (int i = 0; i < nums.length; i++) {
@@ -29,7 +30,7 @@ public class TwoSum implements Task {
         return new int[2];
     }
 
-    public static int[] twoSum(int[] nums, int target) {
+    private int[] twoSum(int[] nums, int target) {
         for (int i = 0; i < nums.length - 1; i++) {
             for (int j = i +1 ; j < nums.length; j++) {
                 if (nums[i] + nums[j] == target) {
@@ -40,7 +41,7 @@ public class TwoSum implements Task {
         return new int[2];
     }
 
-    public static int[] twoSumHashMap(int[] nums, int target) {
+    private int[] twoSumHashMap(int[] nums, int target) {
         HashMap<Integer, Integer> map = new HashMap<>();
         for (int i = 0; i < nums.length; i++) {
             map.put(nums[i], i);

@@ -1,19 +1,20 @@
 package tasks;
 
+import core.FastScanner;
 import core.Task;
 
 public class RemoveElement implements Task {
     private static final int TASK_ID = 27;
 
     @Override
-    public void solve() {
+    public void solve(FastScanner in) {
         int[] nums = {3,2,2,3};
         int val = 3;
         int result = removeElement(nums, val);
         System.out.println(result);
     }
 
-    public int removeElement(int[] nums, int val) {
+    private int removeElement(int[] nums, int val) {
         if(nums.length == 0) return 0;
         int counter = 0;
 

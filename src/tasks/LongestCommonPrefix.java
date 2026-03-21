@@ -1,5 +1,6 @@
 package tasks;
 
+import core.FastScanner;
 import core.Task;
 
 import java.util.ArrayList;
@@ -10,13 +11,13 @@ public class LongestCommonPrefix implements Task {
     private static final int TASK_ID = 14;
 
     @Override
-    public void solve() {
+    public void solve(FastScanner in) {
         String[] input = {"flower","flow","flight"};
         String result = longestCommonPrefixUsingIndexOf(input);
         System.out.println(result);
     }
 
-    private static String longestCommonPrefixUsingIndexOf(String[] strs) {
+    private String longestCommonPrefixUsingIndexOf(String[] strs) {
         if (strs == null || strs.length == 0) return "";
 
         String prefix = strs[0];
@@ -30,7 +31,7 @@ public class LongestCommonPrefix implements Task {
         return prefix;
     }
 
-    private static String longestCommonPrefixHorizontalScanning(String[] strs) {
+    private String longestCommonPrefixHorizontalScanning(String[] strs) {
         if (strs == null || strs.length == 0) return "";
 
         String prefix = strs[0];
@@ -45,7 +46,7 @@ public class LongestCommonPrefix implements Task {
         return prefix;
     }
 
-    private static String longestCommonPrefixVerticalScanning(String[] strs) {
+    private String longestCommonPrefixVerticalScanning(String[] strs) {
         if (strs == null || strs.length == 0) return "";
 
         StringBuilder answer = new StringBuilder();

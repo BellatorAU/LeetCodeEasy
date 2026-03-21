@@ -1,5 +1,5 @@
 package core;
 
 public interface Task {
-    void solve();
+    void solve(FastScanner in);
 }
